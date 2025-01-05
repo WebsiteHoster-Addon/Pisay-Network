@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Activity Schedule</title>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-database-compat.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+      * {
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Header for PisayConnect -->
+        <header class="text-center mb-4">
+          <h1>PisayConnect</h1>
+      </header>
+      
+      <h2>Manage Activity Schedule</h2>
+        
+        <!-- Add/Edit Form -->
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5 id="form-title">Add Activity</h5>
+                <form id="activity-form">
+                    <input type="hidden" id="activity-id">
+                    <div class="mb-3">
+                        <label for="subject-name" class="form-label">Subject</label>
+                        <input type="text" id="subject-name" class="form-control" placeholder="Enter Subject" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="activity-name" class="form-label">Activity Name</label>
+                        <input type="text" id="activity-name" class="form-control" placeholder="Enter Activity Name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="activity-date" class="form-label">Date</label>
+                        <input type="date" id="activity-date" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="activity-time" class="form-label">Time</label>
+                        <input type="time" id="activity-time" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="class-section" class="form-label">Class Section</label>
+                        <input type="text" id="class-section" class="form-control" placeholder="Enter Class Section" required>
+                    </div>
+                    <button type="button" id="save-btn" class="btn btn-primary me-2">Save Activity</button>
+                    <button type="button" id="save-edit-btn" class="btn btn-info me-2" style="display: none;">Save Edit</button>
+                    <button type="button" id="update-btn" class="btn btn-success me-2" style="display: none;">Update Activity</button>
+                    <button type="button" id="cancel-edit-btn" class="btn btn-secondary me-2" style="display: none;" onclick="cancelEdit()">Cancel Edit</button>
+                    <button type="button" id="back-home-btn" class="btn btn-dark" onclick="window.location.href='home.html'">Go Back to Home</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Activity List -->
+        <div class="mt-4">
+            <h5>Scheduled Activities</h5>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Activity Name</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Class Section</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="activity-list">
+                    <!-- Activities will populate here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="./js/admin-schedule.js"></script>
+</body>
+</html>

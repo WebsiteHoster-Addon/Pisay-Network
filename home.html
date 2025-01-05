@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Miguel Zaivan F. Bernados">
+    <title>PisayConnect - Home</title>
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <h2>PisayConnect <span style="font-size: 0.8em; color: #ffcc00; font-weight: bold;">Beta</span></h2>
+        <ul>
+            <li><a href="home.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="messages.html"><i class="fas fa-envelope"></i> Messages</a></li>
+            <li class="coming-soon"><a href="#"><i class="fas fa-project-diagram"></i> Unsent Project<span>Coming Soon</span></a></li>
+            <li class="coming-soon"><a href="#"><i class="fas fa-cogs"></i> Settings<span>Coming Soon</span></a></li>
+            <li class="coming-soon"><a href="profile.html"><i class="fas fa-user"></i> Profile<span>Coming Soon</span></a></li>
+        </ul>
+    </div>      
+
+    <!-- Toggle Sidebar Button -->
+    <button id="toggle-sidebar" class="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+
+    <div id="loading-spinner" class="spinner">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+        <div id="home-container">
+            <h1>Welcome to PisayConnect, <span id="user-email"></span>!</h1>
+            <p>We're glad to have you here. Your account is successfully signed in. Start exploring and connect with others!</p>
+            <p id="online-users" style="display: none;">Online Users: <span id="online-count">0</span></p>
+            <button id="signout">Sign Out</button>
+        </div>        
+
+        <!-- Activity Schedule Section -->
+        <div id="activity-schedule">
+            <h2>Activity Schedule</h2>
+            <!-- Filters Button -->
+            <button id="filters-button" class="filters-button">Filters</button>
+            <button id="admin-page" style="display: none;">Configure Schedule</button>
+
+            <div id="filter-section" class="filter-section">
+                <label for="section-filter">Filter by Section:</label>
+                <input type="text" id="section-filter" placeholder="Enter section...">
+
+                <label for="subject-filter">Filter by Subject:</label>
+                <input type="text" id="subject-filter" placeholder="Enter subject...">
+
+                <label for="deadline-filter">Filter by Deadline:</label>
+                <input type="date" id="deadline-filter">
+
+                <!-- Sorting buttons -->
+                <button id="sort-least-time" class="sort-button">Least Time Left</button>
+                <button id="sort-most-time" class="sort-button">Most Time Left</button>
+
+                <button id="apply-filters">Apply Filters</button>
+                <button id="clear-filters">Clear Filters</button>
+            </div>
+
+            <table id="activity-table">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Activity</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Class Section</th>
+                        <th>Time Left</th>
+                    </tr>
+                </thead>
+                <tbody id="schedule-list">
+                    <!-- Activities will be dynamically loaded here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="module" src="./js/home.js"></script>
+</body>
+</html>

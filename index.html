@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Miguel Zaivan F. Bernados">
+    <title>PisayConnect - Sign Up/Sign In</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="auth-container" class="container">
+        <h1>PisayConnect</h1>
+        <h3>Sign Up / Sign In</h3>
+        <div id="error-message" class="error" style="color: red; display: none;"></div>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button id="signup"><span>Sign Up</span></button>
+        <button id="signin"><span>Sign In</span></button>
+        <hr>
+        <button id="google-signin"><span>Sign In with Google</span></button>
+        <div id="loading" style="display: none;">Please wait for a moment...</div>
+    </div>    
+
+    <div id="username-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Create Your Username</h2>
+            <input type="text" id="username-input" placeholder="Enter a username (3-15 characters)" required>
+            <button id="save-username">Save Username</button>
+            <div id="username-error" style="color: red; display: none;"></div>
+        </div>
+    </div>    
+
+    <div id="home-container" class="home" style="display: none;">
+        <h1>Welcome to PisayConnect, <span id="user-email"></span>!</h1>
+        <h4>Hang tight! We're setting things up for you...</h4>
+        <button id="signout">Sign Out</button>
+    </div>  
+
+    <script type="module" src="./js/index.js"></script>    
+</body>
+</html>
